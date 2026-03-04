@@ -1,3 +1,5 @@
+import time
+
 N = int(input("How rows/cols/queens? "))
 
 board = [[0]*N for _ in range(N)]
@@ -39,10 +41,14 @@ def queen(board, row, col=0):
             queen(board, row+1)
             board[row][col] = 0
 
+start = time.time()
 
 queen(board, 0)
 for i,sol in enumerate(solutions):
     print(f"\n\nSolution - {i+1}:")
     for j in sol:
         print(j)
+
+end = time.time()
+print(f"Run Time - {end-start}")
 print(f"Total Solutions - {len(solutions)}.")
