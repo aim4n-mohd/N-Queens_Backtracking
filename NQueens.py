@@ -7,10 +7,10 @@ solutions = []
 
 def check(board, row, col):
     for i in range(N):
-        if i!=row:
+        if i<row:
             if board[i][col]:
                 return False
-        if i!=col:
+        if i<col:
             if board[row][i]:
                 return False
     
@@ -50,5 +50,5 @@ for i,sol in enumerate(solutions):
         print(j)
 
 end = time.time()
-print(f"Run Time - {end-start}")
+print(f"\nRun Time - {end-start}s")
 print(f"Total Solutions - {len(solutions)}.")
